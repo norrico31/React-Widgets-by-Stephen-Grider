@@ -2,6 +2,8 @@ import React from 'react'
 
 export default ({ href, className, children}) => {
     const handleOnClick = event => {
+        if (event.metaKey || event.ctrlKey) return 
+        
         event.preventDefault()
         window.history.pushState({}, '', href)
 
